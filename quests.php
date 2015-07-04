@@ -43,19 +43,18 @@
             'Combat'
             ];
             ?>
-
-            <div class="table-options">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="input-group">
-                            <input id="table-search" type="text" class="form-control search-table" placeholder="Search...">
-                        </div>
-                    </div>
+ 
+            <div class="jumbotron compact">
+                <div class="container sub-page">
+                    <h2 class="noselect medieval sub-title"><b><span class="glyphicon glyphicon-globe"></span>
+                        Quests</b></h2>
                 </div>
             </div>
-            
             <table class="quests table table-bordered">
                 <thead>
+                    <th class="margin">
+
+                    </th>
                     <th>
 
                     </th>
@@ -74,6 +73,9 @@
                             echo "</th>";
                         }
                     ?>
+                    <th class="margin">
+
+                    </th>
                 </thead>
                 <tbody>
                 </tbody>

@@ -203,8 +203,8 @@
         </div>
     </body>
     <script>
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
     </script>
 </html>

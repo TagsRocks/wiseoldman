@@ -1,7 +1,7 @@
-        <?php
+        <?php 
         $active = $_SERVER["PHP_SELF"];
         $active = explode('/', $active);
-        $active = $active[count($active) - 1];
+        $active = $active[count($active) - 1]; //magic number, this is bad.
         $active = str_replace(".php", "", $active);
         ?>
 
@@ -39,22 +39,22 @@
                                 <span class="glyphicon glyphicon-home"></span> Home
                             </a>
                         </li>
-                         <li class="<?php if($active == 'quests') { echo 'active'; }?>">
+                        <li class="<?php if($active == 'quests') { echo 'active'; }?>">
                             <a href="quests.php">
                                 <span class="glyphicon glyphicon-globe"></span> Quests
                             </a>
                         </li>
-                         <li class="<?php if($active == 'diary') { echo 'active'; }?>">
+                        <li class="<?php if($active == 'diary') { echo 'active'; }?>">
                             <a href="diary.php">
                                 <span class="glyphicon glyphicon-book"></span> Achievement Diaries
                             </a>
                         </li>
-                         <li class="<?php if($active == 'progress') { echo 'active'; }?>">
+                        <li class="<?php if($active == 'progress') { echo 'active'; }?>">
                             <a href="progress.php">
                                 <span class="glyphicon glyphicon-user"></span> Progress
                             </a>
                         </li>
-                         <li class="<?php if($active == 'downloads') { echo 'active'; }?>">
+                        <li class="<?php if($active == 'downloads') { echo 'active'; }?>">
                             <a href="downloads.php">
                                 <span class="glyphicon glyphicon-download"></span> Downloads
                             </a>

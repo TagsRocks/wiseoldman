@@ -113,7 +113,7 @@ td.data:hover::after, th.data:hover::after  {
     z-index: -1;
 }
 
-.jumbotron {
+.jumbotron.osrs {
     background: #555;
     color: #eee;
 }
@@ -319,7 +319,7 @@ input:-webkit-autofill:hover {
   font-size: 12px;
 }
 
-.medieval {
+.banner-title.medieval {
     font-family: 'Cinzel', serif;
     text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
 }
@@ -476,4 +476,18 @@ h1 small {
 .loginmodal-container, .modal, .loginmodal, #modal-register, #modal-login {
   overflow: hidden;
   overflow-y: hidden;
+}
+
+.jumbotron.compact {
+  padding: 20px;
+  margin: 0;
+}
+
+.jumbotron h2.sub-title {
+  font-size: 20px;
+  font-family: 'Cinzel', serif;
+}
+
+th.margin {
+  width: 100px;
 }
