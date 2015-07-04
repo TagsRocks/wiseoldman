@@ -125,9 +125,6 @@
                 ?>
             </thead>
             <tbody>
-                <?php
-                    $mysqli = new mysqli('localhost', 'root', '', 'quest');
-                ?>
             </tbody>
         </table>
 
