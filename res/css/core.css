@@ -491,3 +491,7 @@ h1 small {
 th.margin {
   width: 100px;
 }
+
+small.subtitle {
+  display: inline-block;
+}

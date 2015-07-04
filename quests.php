@@ -78,6 +78,23 @@
                     </th>
                 </thead>
                 <tbody>
+                    <?php
+                    $mysqli = new mysqli("localhost", "root", "", "rsquest");
+                    $quests = $mysqli->query('SELECT * FROM quests');
+                    while($row = $quests->fetch_assoc()) {
+                        echo "<tr>";
+                            echo "<td>";
+
+                            echo "</td>";
+                            echo "<td>";
+
+                            echo "</td>";
+                            echo "<td>";
+                            echo $row['quest_name'];   
+                            echo "</td>"; 
+                        echo "</tr>";  
+                    }
+                    ?>
                 </tbody>
             </table>
 

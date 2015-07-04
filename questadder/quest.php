@@ -2,7 +2,7 @@
 $hostname_Database = "localhost";
 $database_Database = "rsquest";
 $username_Database = "root";
-$password_Database = "123";
+$password_Database = "";
 
 $mysqli = new mysqli($hostname_Database, $username_Database, $password_Database, $database_Database); 
 if (mysqli_connect_errno()) {

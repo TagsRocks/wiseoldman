@@ -19,22 +19,44 @@
 
                 </div>
                 <div class="container front-page">
-                    <h1 class="noselect medieval banner-title"><b>OSRS Quest Manager</b> <small style="display: inline-block;">-&nbsp;Quest Your Best</small></h1>
+                    <h1 class="noselect medieval banner-title">
+                        <b>OSRS Quest Manager</b> 
+                        <small class="subtitle">
+                            -&nbsp;Quest Your Best
+                        </small>
+                    </h1>
+
                     <p>
-                        <small>OSRS Quest Manager is a community dedicated to giving our users the most efficient questing experience possible.
+                        <small>
+                            OSRS Quest Manager is a community dedicated to giving our users the most efficient questing experience possible.
                         We offer the most efficient questing routes, experience trackers and progress trackers, aswell
-                        as the most up to date and advanced questing guides you could ever hope for.</small>
+                        as the most up to date and advanced questing guides you could ever hope for.
+                        </small>
                     </p>
+
                     <p>
-                        <small>OSRS Quest Manager comes with a range of features you just won't find anywhere else. OSRS Quest Manager can
+                        <small>
+                            OSRS Quest Manager comes with a range of features you just won't find anywhere else. OSRS Quest Manager can
                         evaluate your account and provide you with the most efficient questing path to complete a certain quest or unlock
-                        that quest cape you desire so much...</small>
+                        that quest cape you desire so much...
+                        </small>
                     </p>
+
                     <p>
-                        <small>We have unique portals dedicated to <abbr title="A self sufficient account">ironmen</abbr>,
-                            <abbr title="A limited self sufficient account">hardcore ironmen</abbr>, and regular accounts, as well as one defence
-                        pures and berserker pures - and a few others - to ensure that your account achieves it's full potential, risk free.</small>
+                        <small>
+                            We have unique portals dedicated to 
+                            <abbr title="A self sufficient account">
+                                ironmen
+                            </abbr>,
+
+                            <abbr title="A limited self sufficient account">
+                                hardcore ironmen
+                            </abbr>, 
+                            and regular accounts, as well as one defence
+                            pures and berserker pures - and a few others - to ensure that your account achieves it's full potential, risk free.
+                        </small>
                     </p>
+                    
                     <p>
                         <?php
                         if(!isset($_SESSION['email'])) {
