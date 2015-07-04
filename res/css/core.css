@@ -50,6 +50,7 @@ body {
 
 .banner-title {
     margin-bottom: 35px;
+    cursor: default;
 }
 
 .table-options {
@@ -194,6 +195,10 @@ input:-webkit-autofill:hover {
         border-radius: 0;
         margin-bottom: 5px;
     }
+}
+
+.button-row {
+  margin-top: 50px;
 }
 
 @media (max-width: 768px) {
@@ -395,6 +400,10 @@ input:-webkit-autofill:hover {
     box-sizing: border-box;
 }
 
+.face {
+  cursor: pointer;
+}
+
 .pre-nav .item {
   position: relative;
   transition: 0.25s all;
@@ -405,6 +414,7 @@ input:-webkit-autofill:hover {
   position: relative;
   top: 6px;
   transition: 0.25s all;
+  background: #222;
 }
 
 .top-right:hover .face img {
@@ -461,4 +471,9 @@ h1 small {
 
 .alert.response {
   margin-bottom: 0;
+}
+
+.loginmodal-container, .modal, .loginmodal, #modal-register, #modal-login {
+  overflow: hidden;
+  overflow-y: hidden;
 }
