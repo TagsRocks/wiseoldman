@@ -82,9 +82,10 @@
                     $mysqli = new mysqli("localhost", "root", "", "rsquest");
                     $quests = $mysqli->query('SELECT * FROM quests');
                     while($row = $quests->fetch_assoc()) {
+                        $skills = [];
                         echo "<tr>";
                             echo "<td>";
-
+                            $quest_id = $row['id'];
                             echo "</td>";
                             echo "<td>";
                             echo "<input type='checkbox'/>";
@@ -92,10 +93,29 @@
                             echo "<td>";
                             echo $row['quest_name'];   
                             echo "</td>"; 
-                            foreach($skills as $skill) {
+                            $requirements = $mysqli->query("SELECT * FROM quests_to_requirements 
+                            WHERE quest_id = $quest_id");
+                            while($req = $requirements->fetch_assoc()) {
+                                $req_id = $req['requirements_id'];
+                                $requirement = $mysqli->query("SELECT * FROM requirements
+                                WHERE id = $req_id");
+                                while($r = $requirement->fetch_assoc()) {
+                                    $skill_id = $r['skill_id'];
+                                    $skill_level = $r['skill_level'];
+                                    $skills[] = [(int)$skill_id, (int)$skill_level];
+                                }
+                            } 
+                            for($i = 1; $i <= 25; $i++) {
                                 echo "<td>";
+                                foreach($skills as $skill) {
+                                    if($i == $skill[0]) {
+                                        echo $skill[1];
+                                    }
+                                }
                                 echo "</td>";
-                            }   
+                            }
+                            echo "<td>";
+                            echo "</td>";
                         echo "</tr>";  
                     }
                     ?>
