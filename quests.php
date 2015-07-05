@@ -50,6 +50,9 @@
                         Quests</b></h2> 
                 </div>
             </div>
+            <?php 
+                $user_id = 1; //just assuming
+            ?>
             <table height="500px" class="quests table table-bordered">
                 <thead>
                     <th class="quest_title">
@@ -77,12 +80,18 @@
                     $quests = $mysqli->query('SELECT * FROM quests');
                     while($row = $quests->fetch_assoc()) {
                         $skills = [];
-                        if(rand(1, 20) == 1) {
-                            echo "<tr class='complete'>";
-                        } else {
-                            echo "<tr>";
-                        }
+                        // check to see if user has completed this quest
+
                             $quest_id = $row['id'];
+                            $user_id = 1;
+
+                            $user_completed_quest = $mysqli->query("SELECT * FROM user_quest_completed WHERE user_id = 1 AND quest_id = $quest_id");
+                            if($user_completed_quest->num_rows > 0) {
+                                echo "<tr class='complete'>";
+                            } else {
+                               echo "<tr>"; 
+                            }
+
                             echo "<td class='quest_title'>";
                             echo $row['quest_name'];   
                             echo "</td>"; 
@@ -121,9 +130,20 @@
                                         $quest_id_to_fetch = $q_r['quest_requirement_quest'];
                                         $quest = $mysqli->query("SELECT * FROM quests WHERE id = $quest_id_to_fetch");
                                         while($quest_requirement = $quest->fetch_assoc()) {
-                                            echo "<li class='list-group-item quest'>";
-                                                echo $quest_requirement['quest_name'];
-                                            echo "</li>";
+
+                                            $requirement_quest_id = $quest_requirement['id'];
+                                            $user_completed_quest = $mysqli->query("SELECT * FROM user_quest_completed WHERE user_id = 1 AND quest_id = $requirement_quest_id");
+                                            if($user_completed_quest->num_rows > 0) {
+                                                echo "<li class='list-group-item completed'>";
+                                                    echo $quest_requirement['quest_name'];
+                                                echo "</li>";
+                                            } else {
+                                                echo "<li class='list-group-item quest'>";
+                                                    echo $quest_requirement['quest_name'];
+                                                echo "</li>";
+                                            }
+
+       
                                         }
                                     }
                                     echo '<li class="list-group-item quest completed quest-completed">
