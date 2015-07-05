@@ -121,8 +121,15 @@ $requirements = [
 	],
 	//death plateau
 	[
-
-	]
+		//i leave this empty as no reqs for 
+		//death plateu
+	],
+	//death to dorg
+	[
+		[30, AGILITY, 23],
+		[31, THIEVING, 23]
+	],
+	//and so on
 
 
 

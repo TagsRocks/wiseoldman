@@ -504,6 +504,10 @@ table.quests td.quest_title, table.quests th.quest_title {
   font-weight: bolder;
 }
 
+table.quests th.quest_title {
+  font-size: 20px;
+}
+
 table td.quest_requirements {
   padding: 0 !important;
 }
@@ -577,4 +581,13 @@ tr .list-group-item.ready {
 table.quests tr.complete {
   background: #5cb85c;
   color: white;
+}
+
+img.skill_icon {
+  height: 18px;
+  width: auto;
+}
+
+.label.skill_requirement {
+  margin-right: 10px;
 }
