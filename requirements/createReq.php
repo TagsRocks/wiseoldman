@@ -26,7 +26,7 @@ define('FARMING', 23);
 define('QUESTPOINTS', 24);
 define('COMBAT', 25);
 
-$mysqli = new mysqli('localhost', 'root', '123', 'rsquest');
+$mysqli = new mysqli('localhost', 'root', '', 'rsquest');
 
 $mysqli->query("CREATE TABLE IF NOT EXISTS requirements (
 	id int(12) NOT NULL AUTO_INCREMENT, 

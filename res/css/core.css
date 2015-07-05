@@ -508,7 +508,7 @@ table.quests th.quest_title {
   font-size: 20px;
 }
 
-table td.quest_requirements {
+table td.quest_requirements, table td.skill_requirements {
   padding: 0 !important;
 }
 
@@ -531,6 +531,13 @@ table td.quest_requirements {
   border-right: none;
 }
 
+tr td:hover {
+  background: #ccc;
+}
+
+tr td.quest_requirements:hover, tr td.skill_requirements:hover {
+  background: #f0f0f0;
+}
 
 tr.active .list-group .list-group-item {
   background: #f0f0f0;
@@ -597,8 +604,8 @@ table.quests tr.complete {
 }
 
 img.skill_icon {
-  height: 18px;
-  width: auto;
+  height: auto;
+  width: 18px;
 }
 
 .label.skill_requirement {

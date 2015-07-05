@@ -81,6 +81,11 @@
                 <div class="loginmodal-container">
                     <h1 class="medieval"><b>Login to Your Account</b></h1>
                     <hr>
+                    <?php if(isset($_GET['login'])): ?>
+                        <?php if($_GET['login'] == 'fail'): ?>
+                            <div class="alert alert-danger" role="alert">Invalid username/password combination.</div>
+                        <?php endif; ?>
+                    <?php endif; ?>
                     <form action="login.php?referer=<?=$active;?>" method="POST" autocomplete="off">
                         <input style="display:none" type="text" name="fakeusernameremembered"/>
                         <input style="display:none" type="password" name="fakepasswordremembered"/>
@@ -158,3 +163,11 @@
                 </div>
             </div>
         </div>
+
+        <?php if(isset($_GET['login'])): ?>
+            <?php if($_GET['login'] == 'fail') :?>
+                <script>
+                    $('#modal-login').modal('show');
+                </script>
+            <?php endif; ?>
+        <?php endif; ?>

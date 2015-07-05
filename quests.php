@@ -30,7 +30,7 @@
                     </h2> 
                 </div>
             </div>
-            <table class="quests table table-bordered">
+            <table id="quest_table" class="quests table table-bordered">
                 <thead>
                     <th class="quest_title">
                         Quest
@@ -65,79 +65,56 @@
                             </td>
 
                             <td class="skill_requirements">
-                                <?php foreach($quest->get_skill_requirements() as $requirement): ?>
-                                    <img class="skill_icon"
-                                    src="res/img/icon/<?=$skill_collection[$requirement->get_skill_id()]['name']?>_icon.png"/>
-                                    <span class="label skill_requirement label-success">
-                                        <?=$requirement->get_skill_level();?>
-                                    </span>
-                                <?php endforeach; ?>
+                                <ul class="list-group quests">
+                                    <?php foreach($quest->get_skill_requirements() as $requirement): ?>
+                                        <li class="list-group-item">
+                                            
+                                            <?php 
+                                            if($requirement->get_skill_id() < 25) : ?>
+                                                <img style="position: absolute; right: 10px;" class="skill_icon"
+                                                src="res/img/icon/<?=$skill_collection[$requirement->get_skill_id()]['name']?>_icon.png"/>
+                                                <?=$requirement->get_skill_level();?>
+                                                <?=$skill_collection[$requirement->get_skill_id()]['name'];?> 
+                                            <?php endif; ?>
+
+                                            <?php 
+                                            if($requirement->get_skill_id() == 25) : ?>
+                                                <img style="position: absolute; right: 10px;" class="skill_icon"
+                                                src="res/img/icon/Combat_icon.png"/>
+                                                <?=$requirement->get_skill_level();?>
+                                                Combat
+                                            <?php endif; ?>
+
+                                        </li>
+                                    <?php endforeach; ?>
+                                    <?php if(count($quest->get_skill_requirements()) == 0) : ?>
+                                        <li class="list-group-item">
+                                            None
+                                        </li>
+                                    <?php endif; ?>
+                                </ul>
                             </td>
                             <td class="quest_requirements">
-                                <ul class="list-group quests collapse">
+                                <ul class="list-group quests">
                                     <?php foreach($quest->get_quest_requirements() as $quest_requirement): ?>
                                         <li class="list-group-item">
                                             <?=$quest_requirement->get_title()?>
                                         </li>
                                     <?php endforeach; ?>
                                 </ul>
-                                <ul class="list-group quests summary">
+                                <?php if(count($quest->get_quest_requirements()) == 0) : ?>
+                                <ul class="list-group quests">
                                     <li class="list-group-item">
-                                        <b><?=count($quest->get_quest_requirements());?></b> Required Quests
+                                        None
                                     </li>
                                 </ul>
+                                <?php endif; ?>
                             </td>
                             <td>
                                 <?=$quest->get_difficulty()?>
                             </td>
                             <td>
-                                <?php switch($quest->get_length()) { 
-                                    case "Short":
-                                    ?>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
-
-                                        </div>
-                                    </div>
-                                    <?php
-                                    break;
-                                    case "Short-Medium":
-                                    ?>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="37" aria-valuemin="0" aria-valuemax="100" style="width: 37%;">
-
-                                        </div>
-                                    </div>
-                                    <?php
-                                    break;
-                                    case "Medium":
-                                    ?>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
-
-                                        </div>
-                                    </div>
-                                    <?php
-                                    break;
-                                    case "Long":
-                                    ?>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
-
-                                        </div>
-                                    </div>
-                                    <?php
-                                    break;
-                                    case "Very Long":
-                                    ?>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-
-                                        </div>
-                                    </div>
-                                    <?php
-                                    break;
-                                } ?>
+                                <?=$quest->get_length()?>
                             </td>
                             <td>
                                 <?=$quest->get_type()?>
@@ -148,14 +125,4 @@
             </table>
         </div>
     </body>
-
-    <script>
-    $(document).ready(function() {
-        $("tr").click(function() {
-            $(this).find(".list-group.summary").toggle();
-            $(this).find(".list-group.collapse").toggle();
-            $(this).toggleClass("active");
-        })
-    })
-    </script>
 </html>
