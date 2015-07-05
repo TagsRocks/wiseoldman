@@ -87,11 +87,15 @@
 
                             echo "</td>";
                             echo "<td>";
-
+                            echo "<input type='checkbox'/>";
                             echo "</td>";
                             echo "<td>";
                             echo $row['quest_name'];   
                             echo "</td>"; 
+                            foreach($skills as $skill) {
+                                echo "<td>";
+                                echo "</td>";
+                            }   
                         echo "</tr>";  
                     }
                     ?>
