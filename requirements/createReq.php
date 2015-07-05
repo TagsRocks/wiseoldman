@@ -38,7 +38,7 @@ $mysqli->query("CREATE TABLE IF NOT EXISTS requirements (
 
 $mysqli->query("CREATE TABLE IF NOT EXISTS quests_to_requirements (
 	quest_id int(12),
-	skill_id int(12),
+	requirements_id int(12),
 	primary key(quest_id, skill_id)
 	)");
 
@@ -71,6 +71,60 @@ $requirements = [
 		[11, COOKING, 30],
 		[12, RANGED, 30]
 	],
+	//biohazard
+	[
+
+	],
+	//black knights fortress
+	[
+		[13, QUESTPOINTS, 12]
+	],
+	//cabin fever
+	[
+		[14, AGILITY, 42],
+		[15, CRAFTING, 45],
+		[16, SMITHING, 50],
+		[17, RANGED, 40]
+	],
+	//clock tower
+	[
+
+	],
+	//cold war
+	[
+		[18, HUNTER, 10],
+		[19, AGILITY, 30],
+		[20, CRAFTING, 30],
+		[21, CONSTRUCTION, 34]
+	],
+	//contact
+	[
+
+	],
+	//cooks assistant
+	[
+
+	],
+	//creature of frankenstrain
+	[
+		[22, CRAFTING, 20],
+		[23, THIEVING, 25]
+	],
+	//darkness of hallowvale
+	[
+		[24, CONSTRUCTION, 5],
+		[25, MINING, 20],
+		[26, THIEVING, 22],
+		[27, CRAFTING, 32],
+		[28, MAGIC, 33],
+		[29, STRENGTH, 40]
+	],
+	//death plateau
+	[
+
+	]
+
+
 
 ];
 
@@ -85,7 +139,7 @@ foreach($requirements as $key=>$quest) {
 		} else {
 			$explanation = '';
 		}
-		
+
 		$mysqli->query(
 			"INSERT INTO quests_to_requirements VALUES($key+1, $id)"
 		);

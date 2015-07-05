@@ -285,8 +285,7 @@ input:-webkit-autofill:hover {
     z-index: 14000;
 }
 
-.loginmodal-submit {
-  /* border: 1px solid #3079ed; */
+.loginmodal-submit {  /* border: 1px solid #3079ed; */
   border: 0px;
   color: #fff;
   text-shadow: 0 1px rgba(0,0,0,0.1);
@@ -494,4 +493,88 @@ th.margin {
 
 small.subtitle {
   display: inline-block;
+}
+
+table.quests td {
+  vertical-align: middle !important;
+}
+table.quests td.quest_title, table.quests th.quest_title {
+  font-size: 16px;
+  font-family: 'Cinzel', serif;
+  font-weight: bolder;
+}
+
+table td.quest_requirements {
+  padding: 0 !important;
+}
+
+.list-group.quests {
+  margin: 0;
+  border-radius: 0;
+}
+
+.list-group.quests .list-group-item:first-child {
+  border-top: none;
+}
+
+.list-group.quests .list-group-item:last-child {
+  border-bottom: none;
+}
+
+.list-group.quests .list-group-item {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+}
+
+tr:hover .list-group-item {
+    background: #f0f0f0;
+}
+
+tr:hover .list-group-item:hover {
+  background: #ccc;
+}
+
+tr .list-group-item.completed {
+  background: #5cb85c;
+  color: white;
+}
+
+tr .list-group-item.completed:hover {
+  background: #27ae60;
+}
+
+tr .list-group-item.not-ready {
+  color: #e74c3c;
+}
+
+tr .list-group-item .glyphicon {
+  float: right;
+  display: block;
+}
+
+tr .list-group .list-group-item.quest-completed {
+  display: none;
+}
+
+tr.complete .list-group .list-group-item.quest {
+  display: none;
+}
+
+tr.complete .list-group .list-group-item.quest-completed {
+  display: block;
+  border: none;
+}
+
+tr.complete .list-group .list-group-item.quest-completed:hover {
+  background: #5cb85c;
+}
+
+tr .list-group-item.ready {
+  color: #5cb85c;
+}
+
+table.quests tr.complete {
+  background: #5cb85c;
+  color: white;
 }

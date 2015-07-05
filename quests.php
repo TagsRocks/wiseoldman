@@ -15,7 +15,7 @@
             ?>  
 
             <?php
-            $skills = [
+            $skill_names = [
             'Attack',
             'Strength',
             'Defence',
@@ -47,34 +47,28 @@
             <div class="jumbotron compact">
                 <div class="container sub-page">
                     <h2 class="noselect medieval sub-title"><b><span class="glyphicon glyphicon-globe"></span>
-                        Quests</b></h2>
+                        Quests</b></h2> 
                 </div>
             </div>
-            <table class="quests table table-bordered">
+            <table height="500px" class="quests table table-bordered">
                 <thead>
-                    <th class="margin">
-
-                    </th>
-                    <th>
-
-                    </th>
-                    <th>
+                    <th class="quest_title">
                         Quest
                     </th>
-                    <?php
-                        foreach($skills as $skill) {
-                            echo "<th
-                                class='data hidden-sm hidden-xs'>";
-                                ?>
-                                <div data-toggle='tooltip' data-placement='left' title='<?=$skill;?>'  style="width: 100%; height: 100%;">
-                                    <img src="res/img/icon/<?=$skill;?>_icon.png"/>
-                                </div>
-                                <?php
-                            echo "</th>";
-                        }
-                    ?>
-                    <th class="margin">
-
+                    <th>
+                        Skill<br>Requirements
+                    </th>
+                    <th>
+                        Quest<br>Requirements
+                    </th>
+                    <th>
+                        Difficulty
+                    </th>
+                    <th>
+                        Length
+                    </th>
+                    <th>
+                        Members/Free
                     </th>
                 </thead>
                 <tbody>
@@ -83,14 +77,13 @@
                     $quests = $mysqli->query('SELECT * FROM quests');
                     while($row = $quests->fetch_assoc()) {
                         $skills = [];
-                        echo "<tr>";
-                            echo "<td>";
+                        if(rand(1, 20) == 1) {
+                            echo "<tr class='complete'>";
+                        } else {
+                            echo "<tr>";
+                        }
                             $quest_id = $row['id'];
-                            echo "</td>";
-                            echo "<td>";
-                            echo "<input type='checkbox'/>";
-                            echo "</td>";
-                            echo "<td>";
+                            echo "<td class='quest_title'>";
                             echo $row['quest_name'];   
                             echo "</td>"; 
                             $requirements = $mysqli->query("SELECT * FROM quests_to_requirements 
@@ -105,17 +98,48 @@
                                     $skills[] = [(int)$skill_id, (int)$skill_level];
                                 }
                             } 
-                            for($i = 1; $i <= 25; $i++) {
-                                echo "<td>";
-                                foreach($skills as $skill) {
-                                    if($i == $skill[0]) {
-                                        echo $skill[1];
-                                    }
-                                }
-                                echo "</td>";
+                            echo "<td class='skill_requirements'>";
+                            foreach($skills as $skill) {
+                                echo "<img width='18px' height='auto' 
+                                src='res/img/icon/" . $skill_names[$skill[0]-1] . "_icon.png'/> ";
+                                echo '<span class="label label-success">';
+                                echo $skill[1];
+                                echo '</span>';
+                                echo "&nbsp;&nbsp&nbsp;";
                             }
-                            echo "<td>";
+                            if(count($skills) == 0) {
+                                echo '<span class="label label-default">None</span>';
+                            }
                             echo "</td>";
+                            echo "<td class='quest_requirements'>";
+                                echo '<ul class="list-group quests">';
+
+                                    //need to get a list of quest requirements for this quest now
+
+                                    $quest_requirements = $mysqli->query("SELECT * FROM quest_to_quest_requirement WHERE quest_id = $quest_id");
+                                    while($q_r = $quest_requirements->fetch_assoc()) {
+                                        $quest_id_to_fetch = $q_r['quest_requirement_quest'];
+                                        $quest = $mysqli->query("SELECT * FROM quests WHERE id = $quest_id_to_fetch");
+                                        while($quest_requirement = $quest->fetch_assoc()) {
+                                            echo "<li class='list-group-item quest'>";
+                                                echo $quest_requirement['quest_name'];
+                                            echo "</li>";
+                                        }
+                                    }
+                                    echo '<li class="list-group-item quest completed quest-completed">
+                                        <b>Quest Complete</b> <span class="glyphicon glyphicon-ok"></span>
+                                        </li>';
+                                    echo "</ul>";
+                            echo "</td>";
+                            echo "<td>";
+                            echo $row['quest_difficulty'];
+                            echo "</td>";
+                            echo "<td>";
+                            echo $row['quest_length'];
+                            echo "</td>";
+                            echo "<td>";
+                            echo $row['quest_type'];
+                            echo "</td>"; 
                         echo "</tr>";  
                     }
                     ?>
