@@ -393,9 +393,9 @@ $requirements = [
 	],	
 	//Lost Tribe, The
 	[
-		[130, MINING, 17],
-		[130, AGILITY, 13],
-		[131, THIEVING, 13]
+		[221, MINING, 17],
+		[222, AGILITY, 13],
+		[223, THIEVING, 13]
 	],	
 		
 	//Lunar Diplomacy
