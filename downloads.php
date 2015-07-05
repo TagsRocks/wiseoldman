@@ -10,8 +10,13 @@
     <body>
         <div class="page-container">
             <?php
-            	include "header.php";
+            	include "include/header.php";
             ?>  
+            <div class="jumbotron compact">
+                <div class="container sub-page">
+                    <h2 class="noselect medieval sub-title"><b><span class="glyphicon glyphicon-book"></span> Downloads</b></h2>
+                </div>
+            </div>
     	</div>
 	</body>
 </html>

@@ -15,7 +15,7 @@
         <div class="page-container">
             
             <?php 
-            include "header.php";
+            include "include/header.php";
             $skill_collection = new Collection("skills");
             $skill_collection = $skill_collection->get_collection();
             ?>
@@ -36,10 +36,10 @@
                         Quest
                     </th>
                     <th>
-                        Skill<br>Requirements
+                        Skill Requirements
                     </th>
                     <th>
-                        Quest<br>Requirements
+                        Quest Requirements
                     </th>
                     <th>
                         Difficulty
@@ -74,19 +74,70 @@
                                 <?php endforeach; ?>
                             </td>
                             <td class="quest_requirements">
-                                <ul class="list-group quests">
+                                <ul class="list-group quests collapse">
                                     <?php foreach($quest->get_quest_requirements() as $quest_requirement): ?>
                                         <li class="list-group-item">
                                             <?=$quest_requirement->get_title()?>
                                         </li>
                                     <?php endforeach; ?>
                                 </ul>
+                                <ul class="list-group quests summary">
+                                    <li class="list-group-item">
+                                        <b><?=count($quest->get_quest_requirements());?></b> Required Quests
+                                    </li>
+                                </ul>
                             </td>
                             <td>
                                 <?=$quest->get_difficulty()?>
                             </td>
                             <td>
-                                <?=$quest->get_length()?>
+                                <?php switch($quest->get_length()) { 
+                                    case "Short":
+                                    ?>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
+
+                                        </div>
+                                    </div>
+                                    <?php
+                                    break;
+                                    case "Short-Medium":
+                                    ?>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="37" aria-valuemin="0" aria-valuemax="100" style="width: 37%;">
+
+                                        </div>
+                                    </div>
+                                    <?php
+                                    break;
+                                    case "Medium":
+                                    ?>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+
+                                        </div>
+                                    </div>
+                                    <?php
+                                    break;
+                                    case "Long":
+                                    ?>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
+
+                                        </div>
+                                    </div>
+                                    <?php
+                                    break;
+                                    case "Very Long":
+                                    ?>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+
+                                        </div>
+                                    </div>
+                                    <?php
+                                    break;
+                                } ?>
                             </td>
                             <td>
                                 <?=$quest->get_type()?>
@@ -97,4 +148,14 @@
             </table>
         </div>
     </body>
+
+    <script>
+    $(document).ready(function() {
+        $("tr").click(function() {
+            $(this).find(".list-group.summary").toggle();
+            $(this).find(".list-group.collapse").toggle();
+            $(this).toggleClass("active");
+        })
+    })
+    </script>
 </html>

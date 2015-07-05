@@ -1,5 +1,12 @@
 <?php
 
+if(isset($_GET['referer'])) {
+	$referer = $_GET['referer'];
+} else {
+	$referer = "index";
+}
+
 session_start();
-unset($_SESSION['email']);
-header("location: index.php");
+session_destroy();
+header("location: $referer.php");
+?>

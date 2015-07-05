@@ -10,7 +10,7 @@
     <body>
         <div class="page-container">
             <?php
-            	include "header.php";
+            	include "include/header.php";
             ?>  
             <div class="jumbotron compact">
                 <div class="container sub-page">

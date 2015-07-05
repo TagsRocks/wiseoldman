@@ -403,17 +403,17 @@ input:-webkit-autofill:hover {
   cursor: pointer;
 }
 
-.pre-nav .item {
-  position: relative;
-  transition: 0.25s all;
-  top: 0;
-}
 
-.pre-nav .item:hover {
+.pre-nav .item {
   position: relative;
   top: 6px;
   transition: 0.25s all;
   background: #222;
+}
+.pre-nav .item:hover {
+  position: relative;
+  transition: 0.25s all;
+  top: 0;
 }
 
 .top-right:hover .face img {
@@ -531,6 +531,11 @@ table td.quest_requirements {
   border-right: none;
 }
 
+
+tr.active .list-group .list-group-item {
+  background: #f0f0f0;
+}
+
 tr:hover .list-group-item {
     background: #f0f0f0;
 }
@@ -542,6 +547,14 @@ tr:hover .list-group-item:hover {
 tr .list-group-item.completed {
   background: #5cb85c;
   color: white;
+}
+
+tr .list-group.collapse {
+  display: none;
+}
+
+tr .list-group.summary {
+  display: block;
 }
 
 tr .list-group-item.completed:hover {
@@ -590,4 +603,43 @@ img.skill_icon {
 
 .label.skill_requirement {
   margin-right: 10px;
+}
+
+.container.pad-top {
+  padding-top: 60px; 
+}
+
+.pre-nav {
+  background: url(http://subtlepatterns.com/patterns/footer_lodyas.png);
+}
+
+nav .nav li.active {
+  background: url(http://subtlepatterns.com/patterns/pinstriped_suit.png);
+}
+
+.jumbotron.compact {
+  padding-top: 0;
+  padding-bottom: 10px;
+  background: url(http://subtlepatterns.com/patterns/footer_lodyas.png);
+  color: #ccc;
+}
+
+nav {
+  position: absolute;
+  z-index: 100;
+}
+
+.top-right {
+  border: 1px solid black;
+  position: absolute;
+  z-index: 100;
+}
+
+.top-right img {
+  position: absolute;
+}
+
+.progress {
+  margin-bottom: 0;
+  height: 100%;
 }

@@ -130,9 +130,6 @@ $requirements = [
 		[31, THIEVING, 23]
 	],
 	//and so on
-
-
-
 ];
 
 foreach($requirements as $key=>$quest) {
