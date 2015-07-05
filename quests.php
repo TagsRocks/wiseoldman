@@ -30,15 +30,34 @@
                     </h2> 
                 </div>
             </div>
+
+            <div class="table-manager">
+                <button id="show_skill_requirements" type="button" class="btn btn-default active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                    Show Skill Requirements 
+                    <span class="glyphicon glyphicon-remove"></span>
+                    <span class="glyphicon glyphicon-ok"></span>
+                </button>
+                <button id="show_quest_requirements" type="button" class="btn btn-default active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                    Show Quest Requirements 
+                    <span class="glyphicon glyphicon-remove"></span>
+                    <span class="glyphicon glyphicon-ok"></span>
+                </button>
+                <button id="toggle_cascading" type="button" class="btn btn-default" data-toggle="button" aria-pressed="false" autocomplete="off">
+                    Enable cascading skill requirements 
+                    <span class="glyphicon glyphicon-remove"></span>
+                    <span class="glyphicon glyphicon-ok"></span>
+                </button>
+            </div>
+
             <table id="quest_table" class="quests table table-bordered">
                 <thead>
                     <th class="quest_title">
                         Quest
                     </th>
-                    <th>
+                    <th id="skill_requirements">
                         Skill Requirements
                     </th>
-                    <th>
+                    <th id="quest_requirements">
                         Quest Requirements
                     </th>
                     <th>
@@ -68,7 +87,6 @@
                                 <ul class="list-group quests">
                                     <?php foreach($quest->get_skill_requirements() as $requirement): ?>
                                         <li class="list-group-item">
-                                            
                                             <?php 
                                             if($requirement->get_skill_id() < 25) : ?>
                                                 <img style="position: absolute; right: 10px;" class="skill_icon"
@@ -87,19 +105,79 @@
 
                                         </li>
                                     <?php endforeach; ?>
+                                </ul>
+
+                                    <?php
+                                    //here I should loop through the quest requirements and get
+                                    //any skill requirements for those
+
+                                    foreach($quest->get_quest_requirements() as $quest_requirement):?>
+                                        <ul class="list-group quests secondary">
+                                            <?php if(count($quest_requirement->get_skill_requirements()) > 0) : ?>
+                                            <li class="list-group-item quest-title">
+                                                <b>[<?=$quest_requirement->get_title();?>]</b>
+                                                <img style="position: absolute; right: 10px;" class="skill_icon"
+                                                        src="res/img/icon/QP_icon.png"/>
+                                            </li>
+                                            <?php endif; ?>
+                                            <?php foreach($quest_requirement->get_skill_requirements() as $quest_requirement_skill_requirement):?>
+
+                                                <li class="list-group-item quest-requirement-skill-requirement">
+                                                    <?php 
+                                                    if($quest_requirement_skill_requirement->get_skill_id() < 25) : ?>
+                                                        <img style="position: absolute; right: 10px;" class="skill_icon"
+                                                        src="res/img/icon/<?=$skill_collection[$quest_requirement_skill_requirement->get_skill_id()]['name']?>_icon.png"/>
+                                                        <?=$quest_requirement_skill_requirement->get_skill_level();?>
+                                                        <?=$skill_collection[$quest_requirement_skill_requirement->get_skill_id()]['name'];?>
+                                                    <?php endif; ?>
+
+                                                    <?php 
+                                                    if($quest_requirement_skill_requirement->get_skill_id() == 25) : ?>
+                                                        <img style="position: absolute; right: 10px;" class="skill_icon"
+                                                        src="res/img/icon/Combat_icon.png"/>
+                                                        <?=$quest_requirement_skill_requirement->get_skill_level();?>
+                                                        Combat
+                                                    <?php endif; ?>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    <?php endforeach;?>
+
                                     <?php if(count($quest->get_skill_requirements()) == 0) : ?>
                                         <li class="list-group-item">
                                             None
                                         </li>
                                     <?php endif; ?>
-                                </ul>
                             </td>
                             <td class="quest_requirements">
                                 <ul class="list-group quests">
                                     <?php foreach($quest->get_quest_requirements() as $quest_requirement): ?>
-                                        <li class="list-group-item">
-                                            <?=$quest_requirement->get_title()?>
-                                        </li>
+                                        
+                                            <li class="list-group-item toggle-quest-requirements">
+                                                <?=$quest_requirement->get_title()?>
+                                            </li>
+                                        <!-- I should add a means to toggle each sub-quest -->
+                                                <div class="list-group-hidden">
+                                                <?php foreach($quest_requirement->get_skill_requirements() as $skill_requirement) : ?>
+                                                    <li class="list-group-item">
+                                                        <?php 
+                                                        if($skill_requirement->get_skill_id() < 25) : ?>
+                                                            <img style="position: absolute; right: 10px;" class="skill_icon"
+                                                            src="res/img/icon/<?=$skill_collection[$skill_requirement->get_skill_id()]['name']?>_icon.png"/>
+                                                            <?=$skill_requirement->get_skill_level();?>
+                                                            <?=$skill_collection[$skill_requirement->get_skill_id()]['name'];?>
+                                                        <?php endif; ?>
+
+                                                        <?php 
+                                                        if($skill_requirement->get_skill_id() == 25) : ?>
+                                                            <img style="position: absolute; right: 10px;" class="skill_icon"
+                                                            src="res/img/icon/Combat_icon.png"/>
+                                                            <?=$skill_requirement->get_skill_level();?>
+                                                            Combat
+                                                        <?php endif; ?>
+                                                    </li>
+                                                <?php endforeach; ?>
+                                            </div>
                                     <?php endforeach; ?>
                                 </ul>
                                 <?php if(count($quest->get_quest_requirements()) == 0) : ?>
@@ -125,4 +203,38 @@
             </table>
         </div>
     </body>
+
+    <script>
+        $("#toggle_cascading").click(function() {
+            $("ul.secondary").each(function() {
+                $(this).toggle();
+            });
+            $(this).find(".glyphicon").each(function() {
+                $(this).toggle();
+            });
+        });
+        $("#show_skill_requirements").click(function() {
+            $("th#skill_requirements").toggle();
+            $("td.skill_requirements").toggle();
+            $(this).find(".glyphicon").each(function() {
+                $(this).toggle();
+            });
+            $(this).removeClass("focus");
+            $(this).blur();
+        })
+        $("#show_quest_requirements").click(function() {
+            $("th#quest_requirements").toggle();
+            $("td.quest_requirements").toggle();
+            $(this).find(".glyphicon").each(function() {
+                $(this).toggle();
+            });
+            $(this).removeClass("focus");
+            $(this).blur();
+        })
+        $(".toggle-quest-requirements").each(function() {
+            $(this).click(function() {
+                $(this).next(".list-group-hidden").toggle();
+            })
+        });
+    </script>
 </html>

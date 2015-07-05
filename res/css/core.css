@@ -650,3 +650,63 @@ nav {
   margin-bottom: 0;
   height: 100%;
 }
+
+.list-group-item.quest-title {
+  font-size: 14px;
+  font-family: 'Cinzel', serif;
+  font-weight: bolder;
+  font-style: italic;
+}
+
+.list-group.secondary:hover .list-group-item {
+  background: #e0e0e0;
+}
+
+.list-group.secondary:hover .list-group-item:hover {
+  background: #d0d0d0;
+}
+
+.list-group-item.quest-requirement-skill-requirement {
+  font-style: italic;
+}
+
+.table-manager {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #f0f0f0;
+}
+
+ul.secondary {
+  display: none;
+}
+#toggle_cascading .glyphicon-ok, #show_skill_requirements .glyphicon-remove, #show_quest_requirements .glyphicon-remove {
+  display: none;
+}
+
+.table-manager button.active {
+  background: #5cb85c !important;
+  color: white !important;
+}
+.table-manager button.active:hover {
+  background: #4ca84c;
+  color: white;
+}
+.table-manager button.focus, .table-manager button.focus.active {
+  background: inherit;
+  color: inherit;
+}
+
+.list-group-hidden {
+  display: none;
+}
+
+.list-group-hidden .list-group-item {
+  font-style: italic;
+  font-size: 11px;
+}
+
+.list-group-hidden .list-group-item img {
+  height: 13px;
+  width: auto;
+}
