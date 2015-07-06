@@ -6,20 +6,23 @@ class SkillRequirement {
 	private $skill_id;
 	private $skill_level;
 	private $explanation;
-	private $mysqli;
+	private $connection;
 
 	function __construct($id) {
-		$this->new_mysqli();
+
+		$this->connection = new Connection;
 		$this->id = $id;
+
 		$this->skill_id = $this->query_var("skill_id");
 		$this->skill_level = $this->query_var("skill_level");
 		$this->explanation = $this->query_var("explanation");
 	}
 
 	private function query_var($query) {
-		$result = $this->mysqli->query(
+		$result = $this->connection->get_connection()->query(
 			"SELECT $query FROM requirements WHERE id=$this->id"
 			);
+
 		while($row = $result->fetch_assoc()) {
 			return $row[$query];
 		}
@@ -39,14 +42,5 @@ class SkillRequirement {
 
 	public function get_explanation() {
 		return $this->explanation;
-	}
-
-	public function new_mysqli() {
-		$this->mysqli = new mysqli(
-			'localhost',
-			'root',
-			'',
-			'rsquest'
-		);
 	}
 }

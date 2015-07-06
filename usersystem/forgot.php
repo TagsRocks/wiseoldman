@@ -1,5 +1,5 @@
 <?php
-	include('system_load.php');
+	Include('system_load.php');
 	//This loads system.
 	
 	if(isset($_SESSION['user_id']) && $_SESSION['user_id'] != '') { 
@@ -31,7 +31,7 @@
 	
 	$page_title = $language['forgot_pass_title']; //You can edit this to change your page title.
 	$sub_title = "We can help you.";
-	require_once('includes/header.php');
+	require_once('Includes/header.php');
 	if(isset($message) && $message != '') { 
 		echo '<div class="alert alert-success">';
 		echo $message;
@@ -71,5 +71,5 @@
             <?php echo $language['not_member_yet']; ?> <a href="register.php"><?php echo $language['sign_up']; ?></a>
         </div>
 <?php
-	require_once("includes/footer.php");
+	require_once("Includes/footer.php");
 ?>

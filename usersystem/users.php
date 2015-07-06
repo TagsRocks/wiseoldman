@@ -1,5 +1,5 @@
 <?php
-	include('system_load.php');
+	Include('system_load.php');
 	//This loads system.
 	//user Authentication.
 	authenticate_user('admin');
@@ -11,7 +11,7 @@
 		
 	$page_title = $language["manage_users"]; //You can edit this to change your page title.
 	 $sub_title = "Manage everything related to users";
-	 require_once("includes/header.php"); //including header file.
+	 require_once("Includes/header.php"); //including header file.
 
 	//display message if exist.
     if(isset($message) && $message != '') { 
@@ -27,7 +27,7 @@ $(function(){
 $("#message_all_user").on("submit", function(e){
   e.preventDefault();
   tinyMCE.triggerSave();
-  $.post("includes/messageprocess.php", 
+  $.post("Includes/messageprocess.php", 
 	 $("#message_all_user").serialize(), 
 	 function(data, status, xhr){
 	   $("#success_message_admin").html("<div class='alert alert-success'>"+data+"</div>");
@@ -96,5 +96,5 @@ $("#message_all_user").on("submit", function(e){
     </table>
     <!-- Button trigger modal -->
 <?php
-	require_once("includes/footer.php");
+	require_once("Includes/footer.php");
 ?>

@@ -1,0 +1,755 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+@import url(http://fonts.googleapis.com/css?family=MedievalSharp|Oswald|Cinzel);
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.alert {
+    border-radius: 0;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.checkbox_container {
+    width: 50px;
+}
+
+@media (min-width: 1600px) {
+    td.data, th.data {
+        width: 60px;
+    }
+}
+
+.navbar li {
+
+    font-family: 'Cinzel', serif;
+    font-weight: bolder;
+}
+
+.bottom-home {
+  padding-bottom: 50px;
+}
+
+.bottom-home h3 {
+    font-family: 'Cinzel', serif;
+}
+
+.banner-title {
+    margin-bottom: 35px;
+    cursor: default;
+}
+
+.table-options {
+    box-sizing: border-box;
+    padding: 15px;
+    width: 100%;
+    background: #666;
+}
+
+table td {
+    text-align: center;
+}
+
+table.table th img {
+    width: 18px;
+    height: auto;
+}
+
+table {
+    overflow: hidden;
+    z-index: -1;
+}
+
+table.quests.table th {
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+}
+
+td {
+    position: relative;
+}
+
+tbody tr:hover {
+    background: #f0f0f0;
+}
+td.data:hover::before{
+    background-color: #f0f0f0;
+    content:'\00a0';
+    height: 100%;
+    left: -5000px;
+    position: absolute;
+    top: 0;
+    width: 10000px;
+    z-index: -1;
+}
+
+td:hover {
+    cursor: pointer;
+}
+
+td.data:hover::after, th.data:hover::after  {
+    background-color: #f0f0f0;
+    content:'\00a0';
+    height: 10000px;
+    left: 0;
+    position: absolute;
+    top: -5000px;
+    width: 100%;
+    z-index: -1;
+}
+
+.jumbotron.osrs {
+    background: #555;
+    color: #eee;
+}
+
+a.btn, .label {
+}
+
+.button-row a {
+    width: 100%;
+    font-family: 'Cinzel', serif;
+    font-weight: bolder;
+}
+
+.modal {
+  text-align: center;
+}
+
+.modal:before {
+  display: inline-block;
+  vertical-align: middle;
+  content: " ";
+  height: 100%;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.navbar-brand {
+    padding: 10px;
+}
+
+nav.navbar {
+    border-radius: 0;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+input:-webkit-autofill:hover {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+@media (min-width: 991px) {
+    .center-content {
+        text-align: center;
+    }
+
+    .left-content {
+        text-align: left;
+    }
+
+    .right-content {
+        text-align: right;
+    }
+}
+
+@media (max-width: 991px) {
+
+    .center-content {
+        text-align: center;
+    }
+
+    .left-content {
+        text-align: center;
+    }
+
+    .right-content {
+        text-align: center;
+    }
+
+    .hide-small {
+        display: none;
+    }
+
+    .button-row a {
+        border-radius: 0;
+        margin-bottom: 5px;
+    }
+}
+
+.button-row {
+  margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    ul.user {
+        display: none;
+    }
+
+    .modal.register {
+        bottom: auto;
+    }
+}
+
+#modal-login {
+    margin-left: -3px;
+}
+
+/****** LOGIN MODAL ******/
+.loginmodal-container {
+  padding: 30px;
+  max-width: 350px;
+  width: 100% !important;
+  background-color: #F7F7F7;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow-y: scroll;
+  font-family: roboto;
+}
+
+.modal-open {
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.loginmodal-container h1 {
+  text-align: center;
+  font-size: 1.8em;
+  font-family: roboto;
+}
+
+.loginmodal-container input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.loginmodal-container input[type=text], input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.loginmodal-container input[type=text]:hover, input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.loginmodal {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+/* border-radius: 3px; */
+/* -webkit-user-select: none;
+  user-select: none; */
+}
+
+.modal {
+    z-index: 14000;
+}
+
+.loginmodal-submit {  /* border: 1px solid #3079ed; */
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1);
+  background-color: #4d90fe;
+  padding: 17px 0px;
+  font-family: roboto;
+  font-size: 14px;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.loginmodal-submit:hover {
+  /* border: 1px solid #2f5bb7; */
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #357ae8;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.loginmodal-container a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;
+}
+
+.login-help{
+  font-size: 12px;
+}
+
+.banner-title.medieval {
+    font-family: 'Cinzel', serif;
+    text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+}
+
+.modal .modal-dialog .medieval {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    color: #444;
+    text-shadow: none;
+}
+
+.jumbotron.osrs {
+    position: relative;
+}
+
+.jumbotron.osrs .container {
+    z-index: 100;
+    position: relative;text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.55);
+}
+
+.jumbotron.osrs .container .btn {
+    text-shadow: none;
+    transition: 0.35s all;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border-color: rgba(0,0,0,1);
+}
+
+.jumbotron.osrs .container .btn:hover {
+    transition: 0.35s all;
+    background: rgba(0,0,0,0.8);
+}
+
+.darken-button {
+    background: #444;
+    transition: 0.25s all;
+}
+
+.darken-button:hover {
+    background: #333;
+    transition: 0.25s all;
+}
+.pre-nav {
+    height: 35px;
+    width: 100%;
+    background: #333;
+    text-align: right;
+    padding-right: 120px;
+}
+
+.pre-nav a {
+    display: inline-block;
+    padding: 8px;
+    background: #444;
+    color: #bbb;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-weight: bolder;
+
+}
+
+.pre-nav a:hover {
+    text-decoration: none;
+    color: #ddd;
+}
+
+.top-right {
+    position: absolute;
+    z-index: 144;
+    top: 10px;
+    left: 100%;
+    margin-left: -127px;
+    height: 102px;
+    width: 102px;
+    background: #333;
+    border-radius: 50%;
+    border: 10px solid #222;
+    box-sizing: border-box;
+}
+
+.face {
+  cursor: pointer;
+}
+
+
+.pre-nav .item {
+  position: relative;
+  top: 6px;
+  transition: 0.25s all;
+  background: #222;
+}
+.pre-nav .item:hover {
+  position: relative;
+  transition: 0.25s all;
+  top: 0;
+}
+
+.top-right:hover .face img {
+    transition: 0.25s all;
+    filter: brightness(125%);
+    -webkit-filter: brightness(125%);
+    -moz-filter: brightness(125%);
+    -o-filter: brightness(125%);
+    -ms-filter: brightness(125%);
+}
+
+.top-right .face {
+    width: 100%;
+    height: 100%;
+}
+
+.top-right .face img {
+    height: 100%;
+    transition: 0.25s all;
+}
+
+.jumbotron.osrs .background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-image: url('../img/background.jpg') !important;
+    background-size: cover;
+    background-position: center center;
+    opacity: 0.3;
+    transition: 0.25s all, background-position 1ms;
+}
+
+.loginmodal-container {
+    max-width: none;
+}
+
+body {
+  padding-right: 0px !important
+}
+
+.modal-open {
+  overflow-y: auto;
+}
+
+.modal-backdrop {
+    z-index: 101;
+    opacity: 0.7;
+}
+
+h1 small {
+    color: #ddd;
+}
+
+.alert.response {
+  margin-bottom: 0;
+}
+
+.loginmodal-container, .modal, .loginmodal, #modal-register, #modal-login {
+  overflow: hidden;
+  overflow-y: hidden;
+}
+
+.jumbotron.compact {
+  padding: 20px;
+  margin: 0;
+}
+
+.jumbotron h2.sub-title {
+  font-size: 20px;
+  font-family: 'Cinzel', serif;
+}
+
+th.margin {
+  width: 100px;
+}
+
+small.subtitle {
+  display: inline-block;
+}
+
+table.quests td {
+  vertical-align: middle !important;
+}
+table.quests td.quest_title, table.quests th.quest_title {
+  font-size: 16px;
+  font-family: 'Cinzel', serif;
+  font-weight: bolder;
+}
+
+table.quests th.quest_title {
+  font-size: 20px;
+}
+
+table td.quest_requirements, table td.skill_requirements {
+  padding: 0 !important;
+}
+
+.list-group.quests {
+  margin: 0;
+  border-radius: 0;
+}
+
+.list-group.quests .list-group-item:first-child {
+  border-top: none;
+}
+
+.list-group.quests .list-group-item:last-child {
+  border-bottom: none;
+}
+
+.list-group.quests .list-group-item {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+}
+
+tr td:hover {
+  background: #ccc;
+}
+
+tr td.quest_requirements:hover, tr td.skill_requirements:hover {
+  background: #f0f0f0;
+}
+
+tr.active .list-group .list-group-item {
+  background: #f0f0f0;
+}
+
+tr:hover .list-group-item {
+    background: #f0f0f0;
+}
+
+tr:hover .list-group-item:hover {
+  background: #ccc;
+}
+
+tr .list-group-item.completed {
+  background: #5cb85c;
+  color: white;
+}
+
+tr .list-group.collapse {
+  display: none;
+}
+
+tr .list-group.summary {
+  display: block;
+}
+
+tr .list-group-item.completed:hover {
+  background: #27ae60;
+}
+
+tr .list-group-item.not-ready {
+  color: #e74c3c;
+}
+
+tr .list-group-item .glyphicon {
+  float: right;
+  display: block;
+}
+
+tr .list-group .list-group-item.quest-completed {
+  display: none;
+}
+
+tr.complete .list-group .list-group-item.quest {
+  display: none;
+}
+
+tr.complete .list-group .list-group-item.quest-completed {
+  display: block;
+  border: none;
+}
+
+tr.complete .list-group .list-group-item.quest-completed:hover {
+  background: #5cb85c;
+}
+
+tr .list-group-item.ready {
+  color: #5cb85c;
+}
+
+table.quests tr.complete {
+  background: #5cb85c;
+  color: white;
+}
+
+img.skill_icon {
+  height: auto;
+  width: 18px;
+}
+
+.label.skill_requirement {
+  margin-right: 10px;
+}
+
+.container.pad-top {
+  padding-top: 60px;
+}
+
+.pre-nav {
+  background: url(http://subtlepatterns.com/patterns/footer_lodyas.png);
+}
+
+nav .nav li.active {
+  background: url(http://subtlepatterns.com/patterns/pinstriped_suit.png);
+}
+
+.jumbotron.compact {
+  padding-top: 0;
+  padding-bottom: 10px;
+  background: url(http://subtlepatterns.com/patterns/footer_lodyas.png);
+  color: #ccc;
+}
+
+nav {
+  position: absolute;
+  z-index: 100;
+}
+
+.top-right {
+  border: 1px solid black;
+  position: absolute;
+  z-index: 100;
+}
+
+.top-right img {
+  position: absolute;
+}
+
+.progress {
+  margin-bottom: 0;
+  height: 100%;
+}
+
+.list-group-item.quest-title {
+  font-size: 14px;
+  font-family: 'Cinzel', serif;
+  font-weight: bolder;
+  font-style: italic;
+}
+
+.list-group.secondary:hover .list-group-item {
+  background: #e0e0e0;
+}
+
+.list-group.secondary:hover .list-group-item:hover {
+  background: #d0d0d0;
+}
+
+.list-group-item.quest-requirement-skill-requirement {
+  font-style: italic;
+}
+
+.table-manager {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #f0f0f0;
+}
+
+ul.secondary {
+  display: none;
+}
+#toggle_cascading .glyphicon-ok, #show_skill_requirements .glyphicon-remove, #show_quest_requirements .glyphicon-remove {
+  display: none;
+}
+
+.table-manager button.active {
+  background: #5cb85c !important;
+  color: white !important;
+}
+.table-manager button.active:hover {
+  background: #4ca84c;
+  color: white;
+}
+.table-manager button.focus, .table-manager button.focus.active {
+  background: inherit;
+  color: inherit;
+}
+
+.list-group-hidden {
+  display: none;
+}
+
+.list-group-hidden .list-group-item {
+  font-style: italic;
+  font-size: 11px;
+}
+
+.list-group-hidden .list-group-item img {
+  height: 13px;
+  width: auto;
+}
+
+h3.panel-title {
+  font-family: 'Cinzel', serif;
+  font-weight: bolder;
+}
+
+.panel-body.no-pad {
+    padding: 0;
+}
+
+.panel-body .col-xs-6 {
+    padding: 0;
+}
+
+.panel-body .col-xs-6 .list-group {
+    margin-bottom: 0;
+}
+
+.panel-body .col-xs-6:first-child .list-group-item {
+    border-left: none;
+}
+
+.panel-body .col-xs-6 .list-group-item {
+    text-align: center;
+    border-right: none;
+    padding: 6px;
+}
+
+.panel-body .col-xs-6 .list-group-item {
+    border-radius: 0;
+}
+
+.panel {
+    border-radius: 0;
+}
+
+.panel-body .row {
+    margin: 0;
+}
+
+.panel-body img.quest {
+    cursor: pointer;
+}

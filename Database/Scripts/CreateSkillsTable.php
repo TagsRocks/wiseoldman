@@ -1,8 +1,10 @@
 <?php
 
-require "../Entities/Connection.php";
+require "../../Entities/Connection.php";
 
 $connection = new Connection();
+
+$connection->get_connection()->query("CREATE TABLE skills (id int(12), name varchar(255))");
 
 $skill_names = [
 'Attack',

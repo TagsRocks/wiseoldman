@@ -1,7 +1,5 @@
 <?php
 
-/* class will return a collection of all rows from a table */
-
 class Collection {
 
 	private $collection;

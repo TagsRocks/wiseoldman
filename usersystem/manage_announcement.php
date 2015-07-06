@@ -1,5 +1,5 @@
 <?php
-	include('system_load.php');
+	Include('system_load.php');
 	//This loads system.
 	
 	//user Authentication.
@@ -30,7 +30,7 @@
 	
 	if(isset($_POST['edit_announcement'])){ $page_title = $language['edit_announcement']; } else { $page_title = $language['add_announcement'];} //page title set.
 	$sub_title = "Add or Update announcements.";
-	require_once("includes/header.php"); //including header file.
+	require_once("Includes/header.php"); //including header file.
 	
 	//display message if exist.
     if(isset($message) && $message != '') { 
@@ -88,6 +88,6 @@
 </script>
    </div><!--left-side-form ends here.-->
 <?php
-	require_once('includes/sidebar.php');
-	require_once("includes/footer.php");
+	require_once('Includes/sidebar.php');
+	require_once("Includes/footer.php");
 ?>

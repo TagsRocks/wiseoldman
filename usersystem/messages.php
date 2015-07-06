@@ -1,5 +1,5 @@
 <?php
-	include('system_load.php');
+	Include('system_load.php');
 	//This loads system.
 	//user Authentication.
 	authenticate_user('all');
@@ -15,7 +15,7 @@
 	
 	$page_title = $language["my_messages"]; //You can edit this to change your page title.
 	$sub_title = "Manage your messages";
-	require_once("includes/header.php"); //including header file.
+	require_once("Includes/header.php"); //including header file.
 
 	//display message if exist.
 	if(isset($message) && $message != '') { 
@@ -40,7 +40,7 @@ tinyMCE.triggerSave();
 
 $.ajax({
 type: $form.attr('method'),
-url: 'includes/messageprocess.php',
+url: 'Includes/messageprocess.php',
 data: $form.serialize(),
  
 success: function(data, status) {
@@ -125,5 +125,5 @@ event.preventDefault();
 </div>
 <!--row ends here.-->                    
 <?php
-	require_once("includes/footer.php");
+	require_once("Includes/footer.php");
 ?>

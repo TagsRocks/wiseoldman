@@ -1,5 +1,5 @@
 <?php
-	include('system_load.php');
+	Include('system_load.php');
 	//This loads system.
 	
 	//user Authentication.
@@ -66,7 +66,7 @@ if(isset($_POST['edit_user']) && $_POST['edit_user'] != '') {
 	
 	if(isset($_POST['edit_user'])){ $page_title = $language["edit_user"]; } else { $page_title = $language["add_new_user"];} //page title set.
 	$sub_title = "Manage users";
-	require_once("includes/header.php"); //including header file.
+	require_once("Includes/header.php"); //including header file.
 
     //display message if exist.
         if(isset($message) && $message != '') { 
@@ -229,8 +229,8 @@ if(isset($_POST['edit_user']) && $_POST['edit_user'] != '') {
                    </div><!--left-side-form ends here.-->
                    
 <?php
-	require_once('includes/sidebar.php');
+	require_once('Includes/sidebar.php');
 ?>                        
 <?php
-	require_once("includes/footer.php");
+	require_once("Includes/footer.php");
 ?>

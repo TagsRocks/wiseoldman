@@ -33,8 +33,8 @@ tinymce.init({
 </script>
 <script>
 	var croppicContaineroutputOptions = {
-			uploadUrl:'includes/img_save_to_file.php',
-			cropUrl:'includes/img_crop_to_file.php', 
+			uploadUrl:'Includes/img_save_to_file.php',
+			cropUrl:'Includes/img_crop_to_file.php', 
 			outputUrlId:'cropOutput',
 			modal:false,
 			loaderHtml:'<div class="loader bubblingG"><span id="bubblingG_1"></span><span id="bubblingG_2"></span><span id="bubblingG_3"></span></div> '

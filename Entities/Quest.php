@@ -1,6 +1,6 @@
 <?php
- 
-require_once "SkillRequirement.php";
+
+include "SkillRequirement.php";
 
 class Quest {
 
@@ -51,7 +51,7 @@ class Quest {
 	private function prepare_quest_requirements() {
 		$requirements = [];
 		$result = $this->mysqli->query(
-			"SELECT * FROM quest_to_quest_requirement 
+			"SELECT * FROM quest_to_quest_requirement
 			WHERE quest_id = $this->id"
 			);
 		while($row = $result->fetch_assoc()) {

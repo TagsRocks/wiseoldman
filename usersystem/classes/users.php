@@ -323,7 +323,7 @@ $(function(){
 $("#message_form_'.$user_id.'").on("submit", function(e){
   e.preventDefault();
   tinyMCE.triggerSave();
-  $.post("includes/messageprocess.php", 
+  $.post("Includes/messageprocess.php", 
 	 $("#message_form_'.$user_id.'").serialize(), 
 	 function(data, status, xhr){
 	   $("#success_message_'.$user_id.'").html("<div class=\'alert alert-success\'>"+data+"</div>");

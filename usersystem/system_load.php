@@ -1,8 +1,8 @@
 <?php
 	session_start();
 	/*This file loads system to do basic functions on the site, Please do not change anything here if you dont know what you are doing.*/
-	include('includes/db_connect.php');
-	include('includes/functions.php');
+	Include('Includes/db_connect.php');
+	Include('Includes/functions.php');
 	//Redirecting to installation wizard if not installed already.
 	global $db;
 	//Checks if options exist and installation is complete.
@@ -10,7 +10,7 @@
 	if($val == FALSE) {
 	  HEADER("LOCATION: install.php");
 	}
-	include('includes/update.php');
+	Include('Includes/update.php');
 	//Session signout after session timeout.
 	if(isset($_SESSION['timeout'])) {
 		if ($_SESSION['timeout'] + get_option('session_timeout') * 60 < time()) {
@@ -27,12 +27,12 @@
 	} else { 
 		$lang = 'english';
 	}
-	include('language/'.$lang.'.php');
-	include('classes/users.php');
-	include('classes/userlevel.php');
-	include('classes/notes.php');
-	include('classes/messages.php');
-	include('classes/announcements.php');
+	Include('language/'.$lang.'.php');
+	Include('classes/users.php');
+	Include('classes/userlevel.php');
+	Include('classes/notes.php');
+	Include('classes/messages.php');
+	Include('classes/announcements.php');
 	
 	if(isset($_SESSION['user_id'])):
 	$check_user = new Users;

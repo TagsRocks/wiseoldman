@@ -1,11 +1,11 @@
 <?php
-	include('system_load.php');
+	Include('system_load.php');
 	//This loads system.
 	authenticate_user('all');
 	
 	$page_title = $language['all_page_title'];
 	$sub_title = "Page accessable for all loged in users of anytype.";
-	require_once('includes/header.php');
+	require_once('Includes/header.php');
 ?>
 
   <!--END OF MANAGE PROFILE LOGOUT-->     
@@ -15,7 +15,7 @@
 <p><?php echo $language['all_page_des_2']; ?></p>
 <pre>
 &lt;?php
-	include('system_load.php');
+	Include('system_load.php');
 	<?php echo $language['home_comment_2']; ?>
 	
 	authenticate_user('all');
@@ -26,7 +26,7 @@
 <p><?php echo $language['all_page_des_3']; ?></p>
 <pre>
 &lt;?php
-	include('system_load.php');
+	Include('system_load.php');
 	<?php echo $language['home_comment_2']; ?>
 	
 	authenticate_user('subscriber');
@@ -59,5 +59,5 @@
 
 <!--footer -->
 <?php
-	require_once("includes/footer.php");
+	require_once("Includes/footer.php");
 ?>      

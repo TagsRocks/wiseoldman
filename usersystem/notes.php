@@ -1,5 +1,5 @@
 <?php
-	include('system_load.php');
+	Include('system_load.php');
 	//This loads system.
 	//user Authentication.
 	authenticate_user('all');
@@ -11,7 +11,7 @@
 		
 	$page_title = $language["my_notes"]; //You can edit this to change your page title.
 	$sub_title = "Manage your notes.";
-	require_once("includes/header.php"); //including header file.
+	require_once("Includes/header.php"); //including header file.
 
     //display message if exist.
         if(isset($message) && $message != '') { 
@@ -26,5 +26,5 @@
    <?php $notes_obj->list_notes(); ?>
 
 <?php
-	require_once("includes/footer.php");
+	require_once("Includes/footer.php");
 ?>

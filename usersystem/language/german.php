@@ -1,6 +1,6 @@
 <?php
 
-//File includes all language related variables you can change them to any language you want. Please do not change variable names.
+//File Includes all language related variables you can change them to any language you want. Please do not change variable names.
 
 	$language = array();
 

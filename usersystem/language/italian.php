@@ -155,7 +155,7 @@
 	"default_system_language" => "Lingua di sistema di Default - Usata",
 	"site_name" => "Nome Sito",
 	"site_url" => "Sito URL",
-	"site_url_des" => "Si prega di includere / alla fine della URL del sito ad esempio http://localhost/",
+	"site_url_des" => "Si prega di Includere / alla fine della URL del sito ad esempio http://localhost/",
 	"select_skin" => "Seleziona Skin",	
 	//manage_notes.php manage notes page.
 	"note_title_required" => "Nota: il Titolo è richiesto!",

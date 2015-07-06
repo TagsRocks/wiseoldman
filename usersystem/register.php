@@ -1,5 +1,5 @@
 <?php
-	include('system_load.php');
+	Include('system_load.php');
 	//This loads system.
 	
 	if(isset($_SESSION['user_id']) && $_SESSION['user_id'] != '') { 
@@ -11,7 +11,7 @@
 			if($add_user == 1){
 			extract($_POST);
 	 if(get_option('activate_captcha')) {	
-		require_once('includes/recaptchalib.php');
+		require_once('Includes/recaptchalib.php');
 	  	$privatekey = get_option('private_key');
   		$resp = recaptcha_check_answer ($privatekey,
                                 $_SERVER["REMOTE_ADDR"],
@@ -55,10 +55,10 @@
 	
 	$page_title = $language['registration_page_title']; //You can edit this to change your page title.
 	$sub_title = "Register below to get an account!";
-	require_once('includes/header.php');
+	require_once('Includes/header.php');
 	
 	if(get_option('facebook_login') == '1') { 
-		include('includes/add_facebook.php');
+		Include('Includes/add_facebook.php');
 		echo '<div id="fb_return_msg"></div>';
 	}
 	if(isset($message) && $message != '') { 
@@ -84,7 +84,7 @@
                  	<?php 
 						//This is captcha code please do not remove it you can deactivate captcha by going admin section general settings. Else form will not work . on other page.
 						if(get_option('activate_captcha') == '1') { 
-						  require_once('includes/recaptchalib.php');
+						  require_once('Includes/recaptchalib.php');
 						  $publickey = get_option('public_key'); // you got this from the signup page
 						  echo recaptcha_get_html($publickey);
 						} ?>
@@ -115,5 +115,5 @@
         	<?php echo $language['already_account']; ?> <a href="login.php"><?php echo $language['sign_in']; ?></a>
         </div>
 <?php
-	require_once("includes/footer.php");
+	require_once("Includes/footer.php");
 ?>

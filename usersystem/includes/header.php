@@ -47,7 +47,7 @@
 	endif; ?>
 <div class="main-content" <?php if(!isset($_SESSION['user_id'])): echo 'style="width:100%;"'; endif; ?>>
 	<?php
-		//This file includes top bar navigation things.
+		//This file Includes top bar navigation things.
 		if(partial_access('all')): //If user is loged in this bar would show up.
 			require_once('top_bar.php');
 		else:

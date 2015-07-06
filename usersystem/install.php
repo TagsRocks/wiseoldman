@@ -1,8 +1,8 @@
 <?php
 	//Page display settings.
 	$page_title = "Installation!"; //You can edit this to change your page title.
-	require_once("includes/functions.php"); //option functions file.
-	require_once("includes/db_connect.php"); //Database connection file.
+	require_once("Includes/functions.php"); //option functions file.
+	require_once("Includes/db_connect.php"); //Database connection file.
 	
 	global $db; //creating database object.
 	
@@ -197,7 +197,7 @@
 
                 	<div class="form-group">
                     	<label class="control-label">Site URL*:</label>
-                        <input type="text" class="form-control" name="site_url" required /><small>Please include / at end of site url e.g http://localhost/</small>
+                        <input type="text" class="form-control" name="site_url" required /><small>Please Include / at end of site url e.g http://localhost/</small>
                     </div>
                     
                     <div class="form-group">

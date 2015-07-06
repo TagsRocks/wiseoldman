@@ -1,5 +1,5 @@
 <?php
-	include('system_load.php');
+	Include('system_load.php');
 	//This loads system.
 
 	//user Authentication.
@@ -56,7 +56,7 @@ if(isset($_GET['user_id']) && $_GET['user_id'] != '') {
 	}//setting user data if editing. 	
 	
 	$page_title = $language['edit_your_profile']; //You can edit this to change your page title.
-	require_once("includes/header.php"); //including header file.
+	require_once("Includes/header.php"); //including header file.
 	?>
 
 	<?php
@@ -192,8 +192,8 @@ if(isset($_GET['user_id']) && $_GET['user_id'] != '') {
         </script>
 	</div><!--left-side-form ends here.-->                
 <?php
-	require_once('includes/sidebar.php');
+	require_once('Includes/sidebar.php');
 ?>                        
 <?php
-	require_once("includes/footer.php");
+	require_once("Includes/footer.php");
 ?>

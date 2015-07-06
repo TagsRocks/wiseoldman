@@ -1,5 +1,5 @@
 <?php
-	include('system_load.php');
+	Include('system_load.php');
 	//Including this file we load system.
 	/*
 	Logout function if called.
@@ -15,7 +15,7 @@
 	
 	$page_title = $language['dashboard_title']; //You can edit this to change your page title.
 	$sub_title = "Welcome admin here you can manage everything.";
-	require_once("includes/header.php"); //including header file.
+	require_once("Includes/header.php"); //including header file.
 ?>
 
 	<!--Small Widget Starts Here-->
@@ -116,5 +116,5 @@
     
 <div class="clearfix">
 <?php
-	require_once("includes/footer.php");
+	require_once("Includes/footer.php");
 ?>

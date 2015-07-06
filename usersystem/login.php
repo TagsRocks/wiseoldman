@@ -1,5 +1,5 @@
 <?php
-	include('system_load.php');
+	Include('system_load.php');
 	//This loads system.	
 	$new_user = new Users; //creating user object.
 	
@@ -49,11 +49,11 @@
 
 	$page_title = $language['login_title']; //You can edit this to change your page title.
 	$sub_title = "Please login below to access the dashboard.";
-	require_once('includes/header.php');
+	require_once('Includes/header.php');
 
 	//adding facebook if activate.
 	if(get_option('facebook_login') == '1') { 
-		include('includes/add_facebook.php');
+		Include('Includes/add_facebook.php');
 		echo '<div id="fb_return_msg"></div>';
 	}
 
@@ -102,5 +102,5 @@
         		<?php echo $language['not_member_yet']; ?> <a href="register.php"><?php echo $language['sign_up']; ?></a>
         	</div>
 <?php
-	require_once("includes/footer.php");
+	require_once("Includes/footer.php");
 ?>

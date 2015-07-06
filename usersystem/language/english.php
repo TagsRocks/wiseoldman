@@ -1,5 +1,5 @@
 <?php
-//File includes all language related variables you can change them to any language you want. Please do not change variable names.
+//File Includes all language related variables you can change them to any language you want. Please do not change variable names.
 	$language = array();
 	$language = array(
 	"home_title" => "Home Page!",
@@ -157,7 +157,7 @@
 	"default_system_language" => "Default System Language",
 	"site_name" => "Site Name",
 	"site_url" => "Site URL",
-	"site_url_des" => "Please include / at end of site url e.g http://localhost/",
+	"site_url_des" => "Please Include / at end of site url e.g http://localhost/",
 	"select_skin" => "Select Skin",
 	
 	//manage_notes.php manage notes page.

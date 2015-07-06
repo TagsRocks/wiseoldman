@@ -1,11 +1,11 @@
 <?php
-	include('system_load.php');
+	Include('system_load.php');
 	//This loads system.
 	authenticate_user('subscriber');
 	
 	$page_title = 'Dashboard';
 	$sub_title = "Page for subscribers.";
-	require_once('includes/header.php');	
+	require_once('Includes/header.php');	
 ?>
 <p>In sidebar menu Dashboard would be linked to level page automatically. This is subscriber page and dashboard link in sidebar is linked to subscriber.php from database. You can create more user levels as per your needs and create pages like this which are only accessible by admin users and their level access holders. Non loged in users would be redirected to login page.</p>
 <p><?php echo $language["sub_page_des_1"]; ?></p>
@@ -14,7 +14,7 @@
 <p><?php echo $language['all_page_des_3']; ?></p>
 <pre>
 &lt;?php
-	include('system_load.php');
+	Include('system_load.php');
 	<?php echo $language['home_comment_2']; ?>
 	
 	authenticate_user('subscriber');
@@ -25,7 +25,7 @@
 <p><?php echo $language['all_page_des_2']; ?></p>
 <pre>
 &lt;?php
-	include('system_load.php');
+	Include('system_load.php');
 	<?php echo $language['home_comment_2']; ?>
 	
 	authenticate_user('all');
@@ -57,4 +57,4 @@
 <?php endif; ?>
 
 <!--footer-->
-<?php require_once('includes/footer.php'); ?>
+<?php require_once('Includes/footer.php'); ?>

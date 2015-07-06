@@ -58,7 +58,7 @@
 		 },
 		 type: 'POST',
 		 dataType: 'json',
-		 url: 'includes/fbloginprocess.php',
+		 url: 'Includes/fbloginprocess.php',
 		 success: function(response) {
 		   var message = response.message;
 				if(message == '1') { 

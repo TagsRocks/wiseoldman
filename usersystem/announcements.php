@@ -1,5 +1,5 @@
 <?php
-	include('system_load.php');
+	Include('system_load.php');
 	//This loads system.
 	
 	//user Authentication.
@@ -12,7 +12,7 @@
 		
 	$page_title = $language["announcements"]; //You can edit this to change your page title.
 	$sub_title = "What you want to say your users.";
-	require_once("includes/header.php"); //including header file.
+	require_once("Includes/header.php"); //including header file.
 	
 	//display message if exist.
 	if(isset($message) && $message != '') { 
@@ -27,5 +27,5 @@
    <?php $announcement_obj->list_announcements(); ?>
 
 <?php
-	require_once("includes/footer.php");
+	require_once("Includes/footer.php");
 ?>

@@ -1,5 +1,5 @@
 <?php
-	include('system_load.php');
+	Include('system_load.php');
 	//Including this file we load system.
 	
 	//user Authentication.
@@ -72,7 +72,7 @@
 	//Page display settings.
 	$page_title = $language['general_setting_page_title']; //You can edit this to change your page title.
 	$sub_title = "Manage everything related to website features.";
-	require_once("includes/header.php"); //including header file.
+	require_once("Includes/header.php"); //including header file.
 
     //display message if exist.
 	if(isset($_GET['message']) && $_GET['message'] != '') { 
@@ -277,5 +277,5 @@
             </script>
            </div><!--left-side-form ends here.-->                   
 <?php
-	require_once("includes/footer.php");
+	require_once("Includes/footer.php");
 ?>

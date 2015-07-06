@@ -1,5 +1,5 @@
 <?php
-	include('system_load.php');
+	Include('system_load.php');
 	//This loads system.
 	//user Authentication.
 	authenticate_user('admin');
@@ -22,7 +22,7 @@
 	}//isset add level
 	if(isset($_POST['edit_level'])){ $page_title = $language["edit_user_level"]; } else { $page_title = $language["add_new_user_level"];}; //You can edit this to change your page title.
 	$sub_title = "Add or update user levels";
-	require_once("includes/header.php"); //including header file.
+	require_once("Includes/header.php"); //including header file.
 
         //display message if exist.
             if(isset($message) && $message != '') { 
@@ -51,7 +51,7 @@
                         <small><?php echo $language["level_des_3"]; ?> 
 <pre>
 &lt;?php
-	include('system_load.php'); //<?php echo $language["load_properly"]; ?>
+	Include('system_load.php'); //<?php echo $language["load_properly"]; ?>
 	
     <?php echo $language["home_comment_1"]; ?>
     
@@ -78,8 +78,8 @@
                    </div><!--left-side-form ends here.-->
                    
 <?php
-	require_once('includes/sidebar.php');
+	require_once('Includes/sidebar.php');
 ?>                        
 <?php
-	require_once("includes/footer.php");
+	require_once("Includes/footer.php");
 ?>
