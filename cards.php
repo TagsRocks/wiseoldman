@@ -30,6 +30,19 @@ require("Entities/Collection.php");
             </div>
             <div class="container pad-top">
                 <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="search" placeholder="Search...">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-12">
+
+                        <hr />
+                    </div>
                     <?php $quests = new Collection("quests"); ?>
                     <?php $skills = new Collection("skills"); ?>
                     <?php foreach($quests->get_collection() as $quest_row) : ?>
@@ -52,7 +65,7 @@ require("Entities/Collection.php");
                             </ul>
                             <div class="panel panel-default" >
                                 <div class="panel-heading clearfix quest-title">
-                                    <h3 class="quest-title panel-title pull-left"><?=$quest->get_title();?>
+                                    <h3 id="title" class="quest-title panel-title pull-left"><?=$quest->get_title();?>
 
                                     </h3>
                                 </div>
@@ -144,6 +157,27 @@ require("Entities/Collection.php");
         $(function () {
             $('[data-toggle="tooltip"]').tooltip();
         });
+
+        $("#search").keyup(function() {
+            if($(this)[0].value == "") {
+                $(".panel-container").each(function() {
+                    $(this).show();
+                })
+            }
+        })
+
+        $("#search").change(function() {
+            $search = $(this)[0].value;
+            if($search != "") {
+                $(".panel-container").each(function() {
+                    $(this).hide();
+                    $value = $(this).find("#title")[0].outerText;
+                    if($value.toUpperCase().indexOf($search.toUpperCase()) > -1) {
+                        $(this).show();
+                    }
+                });
+            }
+        })
     })
     </script>
 </html>
