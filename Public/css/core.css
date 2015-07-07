@@ -720,30 +720,113 @@ h3.panel-title {
     padding: 0;
 }
 
-.panel-body .col-xs-6 {
+.panel-body .col-xs-12 {
     padding: 0;
 }
 
-.panel-body .col-xs-6 .list-group {
+.panel-body .list-group {
     margin-bottom: 0;
 }
 
-.panel-body .col-xs-6:first-child .list-group-item {
-    border-left: none;
-}
-
-.panel-body .col-xs-6 .list-group-item {
+.panel-body .list-group-item {
     text-align: center;
-    border-right: none;
+    border-left: none;
     padding: 6px;
 }
 
-.panel-body .col-xs-6 .list-group-item {
+.panel-body .list-group {
+    margin-top: -2px;
+    margin-bottom: -2px;
+}
+
+.panel-body  .list-group-item {
     border-radius: 0;
 }
 
 .panel {
     border-radius: 0;
+    -webkit-box-shadow: 0px 0px 11px 3px rgba(0,0,0,0.07);
+    -moz-box-shadow: 0px 0px 11px 3px rgba(0,0,0,0.07);
+    box-shadow: 0px 0px 11px 3px rgba(0,0,0,0.07);
+    margin-bottom: 55px;
+    margin-left: 15px;
+    margin-right: 15px;
+    transition: 0.35s all;
+}
+
+.panel:hover {
+    transition: 0.35s all;
+    -webkit-box-shadow: 0px 0px 16px 7px rgba(0,0,0,0.14);
+    -moz-box-shadow: 0px 0px 16px 7px rgba(0,0,0,0.14);
+    box-shadow: 0px 0px 16px 7px rgba(0,0,0,0.14);
+}
+
+.panel-container {
+    position: relative;
+}
+
+.panel-container:hover ul.panel-options {
+    height: 100%;
+}
+
+.panel-container:hover ul.panel-options li {
+    height: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: 0.5s all;
+}
+
+ul.panel-options {
+    transition: 0.5s all;
+    list-style-type: none;
+    -webkit-padding-start: 0;
+    display: block;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: white;
+    z-index: 1111;
+}
+ul.panel-options li {
+    height: 0;
+    overflow: hidden;
+    padding: 10px;
+    list-style-type: none;
+    background: #e74c3c;
+    cursor: pointer;
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: 0.5s all;
+}
+
+ul.panel-options li:hover {
+    background: #c0392b;
+    transition: 0.5s all;
+}
+
+.panel .panel-heading {
+    background: #222;
+    color: white;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.panel .panel-footer {
+    background: #e74c3c;
+    color: white;
+    transition: 0.5s all;
+}
+
+.panel-container:hover .panel-footer {
+    background: #c0392b;
+    transition: 0.5s all;
+}
+
+.panel .panel-body {
+    margin-right: -1px;
 }
 
 .panel-body .row {
@@ -752,4 +835,81 @@ h3.panel-title {
 
 .panel-body img.quest {
     cursor: pointer;
+}
+
+.skills_container {
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+    padding-top:10px !important;
+    padding-bottom: 4px !important;
+}
+
+.skills_container .skill {
+    width: 45px;
+    display: inline-block;
+}
+
+h3.quest-title {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 20px;
+}
+
+.list-group-item.list-title {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.quest-row {
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: visible;
+    padding-top:13px !important;
+    padding-bottom: 7px !important;
+    text-align: center;
+}
+
+.list-group-item.skill {
+    padding-bottom: 10px !important;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 6px;
+}
+
+.label.quest {
+    background: #222;
+}
+
+::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-thumb {
+    background: #222;
+}
+
+.tooltip.top .tooltip-arrow {
+    border-top-color: #c0392b !important;
+}
+
+.tooltip.right .tooltip-arrow {
+    border-right-color: #c0392b !important;
+}
+
+.tooltip.left .tooltip-arrow {
+    border-left-color: #c0392b!important;
+}
+
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color: #c0392b !important;
+}
+
+.tooltip-inner {
+    white-space: nowrap;
+    background: #c0392b;
 }
